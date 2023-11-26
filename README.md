@@ -6,15 +6,21 @@ This is the code of the paper '**Delayless Generative Fixed-filter Active Noise 
 <p align="center">
 </p>
 
-This paper is an improvement upon my ICASSP paper 'Deep Generative Fixed-Filter Active Noise Control (GFANC)'.
-The code of GFANC: https://github.com/Luo-Zhengding/GFANC-Generative-fixed-filter-active-noise-control
-
-1. In our ICASSP 2023 paper, GFANC generates its control filter solely using information from the current noise frame. Compared to GFANC in the ICASSP paper, the GFANC-Bayes approach improves the generation of control filters by exploiting the correlation between adjacent noise frames based on Bayesian filter.
+**HIGHLIGHTS:**
+1. The limited number of pre-trained filters in the selective fixed-filter active noise control (SFANC) method is insufficient to effectively control various forms of noise. To address this limitation and generate more appropriate control filters, a generative fixed-filter active noise control approach based on Bayesian filter (GFANC-Bayes) is proposed in this paper.
    
-2. A lightweight one-dimensional CNN is developed to automatically predict the combination weights of sub control filters given the input noise. The combination weights are then filtered by a Bayesian decision module using prior weights and predicted weights.
+2. The GFANC-Bayes method can automatically generate suitable control filters by combining sub control filters. The combination weights of sub control filters are predicted via a 1D CNN. The predicted combination weights are then filtered by a Bayesian filtering module, which exploits the correlation information between adjacent noise frames to improve the prediction accuracy and robustness.
 
-3. Due to the efficient collaboration between the co-processor and real-time processor, the GFANC system can achieve delayless noise reduction. Additionally, the GFANC method requires only one pre-trained broadband control filter as prior data to generate various control filters.
+3. To achieve delayless noise control, the co-processor operates at the frame rate while the real-time controller performs at the sample rate in parallel. Simulations on real-world noises indicate that the GFANC-Bayes method achieves superior noise reduction performance than SFANC and a faster response time than FxLMS. Moreover, experiments on different acoustic paths demonstrate its robustness and transferability.
 
-* You can easily run the "Main-GFANC-Bayes.ipynb" file to get the noise reduction results.
+**How to use the code:**
+If you don't want to retrain the 1D CNN ('M5_Network.py'), the trained model can be found in 'models/M6_res_Synthetic.pth', you can easily run the 'Main-GFANC-Bayes.ipynb' file to get the noise reduction results.
 
-If you are interested in the works, you can read and cite our papers. Thanks!
+Especially, the pre-trained sub control filters are obtained on synthetic acoustic paths, where the primary and secondary paths are bandpass filters. If you want to use the trained GFANC-Bayes system on new acoustic paths only requires obtaining the corresponding broadband control filter and decomposing it into sub control filters. Noticeably, the trained 1D CNN in the GFANC-Bayes system remains unchanged. The detailed information can be found in Section 'Noise Cancellation on Measured Acoustic Paths' in the paper.
+
+**RELATED PAPERS:**
+- [Deep Generative Fixed-Filter Active Noise Control](https://arxiv.org/pdf/2303.05788)
+- [GFANC-Kalman: Generative Fixed-Filter Active Noise Control with CNN-Kalman Filtering](https://ieeexplore.ieee.org/document/10323505)
+- [A hybrid sfanc-fxnlms algorithm for active noise control based on deep learning](https://arxiv.org/pdf/2208.08082)
+- [Performance Evaluation of Selective Fixed-filter Active Noise Control based on Different Convolutional Neural Networks](https://arxiv.org/pdf/2208.08440)
+If you are interested in this work, you can read and cite our papers. Thanks!
