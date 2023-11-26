@@ -24,4 +24,4 @@ Especially, the pre-trained sub control filters are obtained on synthetic acoust
 - [GFANC-Kalman: Generative Fixed-Filter Active Noise Control with CNN-Kalman Filtering](https://ieeexplore.ieee.org/document/10323505)
 - [A hybrid sfanc-fxnlms algorithm for active noise control based on deep learning](https://arxiv.org/pdf/2208.08082)
 - [Performance Evaluation of Selective Fixed-filter Active Noise Control based on Different Convolutional Neural Networks](https://arxiv.org/pdf/2208.08440)
-If you are interested in this work, you can read and cite our papers. Thanks!
+- If you are interested in this work, you can read and cite our papers. Thanks!
