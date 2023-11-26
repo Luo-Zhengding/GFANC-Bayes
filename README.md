@@ -1,7 +1,10 @@
-This is the code of paper 'Delayless Generative Fixed-filter Active Noise Control based on Deep Learning and Bayesian Filter' submitted to IEEE Transactions on Audio, Speech and Language Processing (TASLP).
+This is the code of the paper '**Delayless Generative Fixed-filter Active Noise Control based on Deep Learning and Bayesian Filter**' accepted by IEEE Transactions on Audio, Speech and Language Processing (TASLP).
 
-![Fig 1](https://github.com/Luo-Zhengding/GFANC-Bayes/assets/95018034/6cfdd241-9fbb-41dd-a535-fa216dcc0f56)
-
+<p align="center">
+  <img src="https://github.com/Luo-Zhengding/GFANC-Bayes/assets/95018034/6cfdd241-9fbb-41dd-a535-fa216dcc0f56" alt="" width="700" height="600">
+</p>
+<p align="center">
+</p>
 
 This paper is an improvement upon my ICASSP paper 'Deep Generative Fixed-Filter Active Noise Control (GFANC)'.
 The code of GFANC: https://github.com/Luo-Zhengding/GFANC-Generative-fixed-filter-active-noise-control
