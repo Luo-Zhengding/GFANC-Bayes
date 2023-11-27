@@ -11,13 +11,15 @@ This is the code of the paper '**Delayless Generative Fixed-filter Active Noise 
    
 2. The GFANC-Bayes method can automatically generate suitable control filters by combining sub control filters. The combination weights of sub control filters are predicted via a 1D CNN. The predicted combination weights are then filtered by a Bayesian filtering module, which exploits the correlation information between adjacent noise frames to improve the prediction accuracy and robustness.
 
-3. To achieve delayless noise control, the co-processor operates at the frame rate while the real-time controller performs at the sample rate in parallel. Simulations on real-world noises indicate that the GFANC-Bayes method achieves superior noise reduction performance than SFANC and a faster response time than FxLMS. Moreover, experiments on different acoustic paths demonstrate its robustness and transferability.
+3. To achieve delayless noise control, the co-processor operates at the frame rate while the real-time controller performs at the sample rate in parallel.
 
 **How to use the code:**
 
 If you don't want to retrain the 1D CNN ('M5_Network.py'), the trained model can be found in 'models/M6_res_Synthetic.pth', you can easily run the 'Main-GFANC-Bayes.ipynb' file to get the noise reduction results.
 
-Especially, the pre-trained sub control filters are obtained on synthetic acoustic paths, where the primary and secondary paths are bandpass filters. If you want to use the GFANC-Bayes system on new acoustic paths only requires obtaining the corresponding broadband control filter and decomposing it into sub control filters. Noticeably, the trained 1D CNN in the GFANC-Bayes system remains unchanged. The detailed information can be found in Section 'Noise Cancellation on Measured Acoustic Paths' in the paper.
+Especially, the pre-trained sub control filters are obtained on synthetic acoustic paths, where the primary and secondary paths are bandpass filters.
+
+If you want to use the GFANC-Bayes system on new acoustic paths only requires obtaining the corresponding broadband control filter and decomposing it into sub control filters. Noticeably, the trained 1D CNN in the GFANC-Bayes system remains unchanged. The detailed information can be found in Section 'Noise Cancellation on Measured Acoustic Paths' in the paper.
 
 **RELATED PAPERS:**
 - [Deep Generative Fixed-Filter Active Noise Control](https://arxiv.org/pdf/2303.05788)
